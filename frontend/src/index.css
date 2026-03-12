@@ -1,0 +1,66 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #1a1612;
+  --ink-soft: #3d3530;
+  --bark: #6b4f3a;
+  --moss: #4a6741;
+  --moss-light: #6b9463;
+  --fern: #8ab87a;
+  --stone: #c4b9a8;
+  --parchment: #f4efe6;
+  --cream: #faf7f2;
+  --mist: #e8e2d8;
+  --gold: #c9a84c;
+  --ocean-deep: #2c4a6e;
+  --ocean: #4a7fa5;
+  --mountain: #5c6b7a;
+  --desert: #c4875a;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --shadow: 0 2px 20px rgba(26, 22, 18, 0.08);
+  --shadow-deep: 0 8px 40px rgba(26, 22, 18, 0.15);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.7;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(74, 103, 65, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(44, 74, 110, 0.05) 0%, transparent 60%);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--mist); }
+::-webkit-scrollbar-thumb { background: var(--stone); border-radius: 3px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.animate-fadeUp { animation: fadeUp 0.5s ease forwards; }
